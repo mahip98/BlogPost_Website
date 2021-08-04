@@ -1,7 +1,0 @@
-1) blog > __pycache__ , migrations
-2) blog > templatetags > __pycache__ , __init__.py
-3) blog > __init__.py
-4) blog > tests.py
-5) home > __pycache__ , migrations ,__init__.py , tests.py
-6) Coder's Blog > __pycache__ , __init__.py, asgi.py, settings.py
-7) myprojectenv

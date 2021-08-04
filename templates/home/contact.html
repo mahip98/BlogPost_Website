@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+{% block css %}
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+footer {
+  text-align: center;
+  padding: -10px;
+  color: black;
+}
+ .footer {
+        position: fixed;
+        text-align: center;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: black;
+    }
+
+{% endblock %}
+
+{% block contactactive %} active {% endblock contactactive %}
+
+{% block body %}
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="container" my-3>
+    <h1>Contact Coder's Blog Admin</h1>
+    <form  method="post" action="/contact">
+    {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" aria-describedby="name" placeholder="Enter your name" required="True">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email ID</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="email" placeholder="Enter your email id" required="True">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter your Phone Number" required="True">
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">How may we help you, Describe your Issues:</label>
+            <textarea class="form-control" name="content" id="content" name="content" cols="30" row="10" placeholder="Enter your query" required="True"></textarea>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" required="True">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <footer class="pt-3 mt-4 text-muted border-top">
+      <p>Coder's Blog<br>
+        <a href="mailto:codersblog@gmail.com">codersblog@gmail.com</a></p>
+      &copy; 2021
+    </footer>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+//$('#itemsJson').val(JSON.stringify(cart));
+{% if thank %}
+alert('Thanks for contacting us. Your query has been stored and would get the reply back from us as soon as possible. Stay back and stay connected.');
+document.location = "/";
+{% endif %}
+</script>
+{% endblock js %}

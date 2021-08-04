@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About Us
+{% endblock title %}
+
+{% block css %}
+body{
+background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+footer {
+        text-align: center;
+        padding: -10px;
+        color: black;
+    }
+{% endblock %}
+
+{% block aboutactive %} active{% endblock aboutactive %}
+
+{% block body %}
+<main>
+  <div class="container py-4">
+    <div class="p-5 mb-4 rounded-3" style="background: #FFB6C1">
+      <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Coder's Blog</h1>
+          <p class="fs-4">iCoder Blog contains awesome blogs regarding coding and you will find a variety of source over here. We are sure that you would get found of our blogs. </p>
+          <a class="btn btn-primary btn-lg" href="/" role="button">Home Page</a>
+      </div>
+    </div>
+
+    <div class="row align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Mahip Patel</h2>
+          <p>The young guy who founded this website has a brilliant taste of software and has bachelors degree in the field of electronics and communication engineering from G.H.Patel College of Engineering and Technology.</p>
+          <!--<button class="btn btn-outline-light" type="button">Contact Info</button>-->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Dev Mehta</h2>
+          <p>The young guy who designed this website has a brilliant taste of software and has bachelors degree in the field of computer science engineering from Indian Institute of Technology, Bombay.</p>
+          <!--<button class="btn btn-outline-light" type="button">Contact Info</button>-->
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-md-stretch my-4">
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Leena Patel</h2>
+          <p>The young girl who framed this website has a brilliant taste of software and has bachelors degree in the field of information technology from Vellore Institute of Technology.</p>
+          <!--<button class="btn btn-outline-light" type="button">Contact Info</button>-->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <h2>Raj Ranpara</h2>
+          <p>The young guy who set-up this website has a brilliant taste of software and has bachelors degree in the field of electronics and communication engineering from G.H.Patel College of Engineering and Technology.</p>
+          <!--<button class="btn btn-outline-light" type="button">Contact Info</button>-->
+        </div>
+      </div>
+    </div>
+
+       <footer class="pt-3 mt-4 text-muted border-top">
+      <p>Coder's Blog<br>
+        <a href="mailto:codersblog@gmail.com">codersblog@gmail.com</a></p>
+      &copy; 2021
+    </footer>
+  </div> 
+  
+</main>
+{% endblock %}
